@@ -8,8 +8,12 @@ class AsignadorCaracter:
         return cls.TABLA_ASIGNACIONES
     
     @classmethod
-    def es_letra_correcta(cls, dni:str):
-        return cls.TABLA_ASIGNACIONES[ dni % (len(cls.TABLA_ASIGNACIONES) + 1)] == dni[-1]
+    def obtener_letra(cls, dni:str):
+        cls.TABLA_ASIGNACIONES[int(dni[:-1]) % (len(cls.TABLA_ASIGNACIONES) + 1)]
     
+    @classmethod
+    def es_letra_correcta(cls, dni:str):
+        return cls.obtener_letra() == dni[-1]
+
     def __repr__(self):
         return "".join(self.get_tabla())
