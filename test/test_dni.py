@@ -1,10 +1,28 @@
 import pytest
 from src.dni import Dni
+from src.asignador_caracter import AsignadorCaracter
 
-def test_dni_correcto():
-    dni = Dni("12345678Z")
-    assert dni.es_letra_correcta() == True
-
-def test_dni_incorrecto():
-    dni = Dni("12345678A")
-    assert dni.es_letra_correcta() == False
+def test_obtener_dni():
+    cadena = "78484464T"
+    dni = Dni(cadena)
+    assert cadena == dni.obtener_dni()
+    
+def test_comprobar_numero():
+    cadena = "78484464T"
+    dni = Dni(cadena)
+    assert True == dni.comprobar_numero()
+    
+def test_comprobar_letra():
+    cadena = "78484464T"
+    dni = Dni(cadena)
+    assert True == dni.comprobar_letra()
+    
+def test_comprobar_dni():
+    cadena = "78484464T"
+    dni = Dni(cadena)
+    assert True == dni.comprobar_dni()
+    
+def test_validar_dni():
+    cadena = "78484464T"
+    dni = Dni(cadena)
+    assert True == dni.validar_dni()
