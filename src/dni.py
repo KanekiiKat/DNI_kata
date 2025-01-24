@@ -18,14 +18,13 @@ class Dni:
     def comprobar_dni(self):
         return Dni.comprobar_letra(self) and Dni.comprobar_numero(self)
     
-    def __repr__(self):
-        return "".join(self.obtener_dni())
-    
-    
     def validar_dni(self):
         dni = self.dni
         print(Dni.obtener_dni(self))
         print(self.dni[:-1] + str(self.asignador_caracter.obtener_letra(self.dni)))
         if Dni.comprobar_dni:
             return self.dni[:-1] + str(self.asignador_caracter.obtener_letra(self.dni)) == str(Dni.obtener_dni(self))
+        
+    def __repr__(self):
+        return "".join(self.obtener_dni())
             
