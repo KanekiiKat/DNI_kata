@@ -9,7 +9,7 @@ class AsignadorCaracter:
     
     @classmethod
     def obtener_letra(cls, dni:str):
-        cls.TABLA_ASIGNACIONES[int(dni[:-1]) % (len(cls.TABLA_ASIGNACIONES) + 1)]
+        return cls.TABLA_ASIGNACIONES[int(dni[:-1]) % (len(cls.get_tabla()))]
     
     @classmethod
     def es_letra_correcta(cls, dni:str):
